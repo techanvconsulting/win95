@@ -1,0 +1,29 @@
+# Hugo output directory
+/public/
+/public/*
+
+# Hugo cache directory
+/resources/
+
+# Ignore generated files
+*.html
+*.css
+*.js
+
+# Ignore backup files
+*~
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+.tmp/
+.temp/
+.temp-*
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+public/tags/privacy/index.html
+public/index.html
+public/index.xml

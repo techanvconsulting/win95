@@ -7,7 +7,7 @@ preserveTaxonomyNames = true
 
 [params]
     # The name to display as main title in the home page
-    mainpagetitle = "HUGO.386"
+    mainpagetitle = "Windows 95 Blog Theme"
 
     # The subtitle to display under the title in the home page
     mainpagesubtitle = "Welcome to the early 90s!" 
@@ -16,20 +16,18 @@ preserveTaxonomyNames = true
     mainpagedesc = "This theme is the Hugo port of the BOOTSTRA.386 theme for a cool retro look on your blog. Check the links below to access the posts."
 
     # The name to display in the copyright section in the footer
-    copyrightname = "JM Fergeau"
+    copyrightname = "Anubhav Gain"
 
     # The url to use as link in the copyright name in the footer. Leave empty to use none.
-    copyrighturl = "http://jmf-portfolio.netlify.com"
+    copyrighturl = "http://mranv.github.io"
 
     # Show the "built on Hugo" disclaimer
     showhugo = true
 
     # Urls for social networks
-    facebook = "https://facebook.com"
-    twitter = "https://twitter.com"
-    linkedin = "https://linkedin.com"
-    github = "https://github.com"
-    gitlab = "https://gitlab.com"
+    linkedin = "https://in.linkedin.com/in/anubhavgain"
+    github = "https://github.com/mranv"
+    gitlab = "https://gitlab.com/mranv"
 
     # Enables or disables the loading animations. false activates them. Default is false.
     loadfastload = false
@@ -41,16 +39,14 @@ preserveTaxonomyNames = true
     loadonepass = false
 
 [params.copyright]
-    name = "JM Fergeau"
+    name = "Anubhav Gain"
 
     # The url to use as link in the copyright name in the footer. Leave empty to use none.
-    url = "http://jmf-portfolio.netlify.com"
+    url = "https://mranv.github.io"
 
-    # Text to go before copyright information
-    prefix = "[hugo.386 theme by Max le Fou](https://gitlab.com/maxlefou/hugo.386)"
 
     # Text to go between copyright and hugo disclaimer (if enabled)
-    suffix = "Example site"
+    suffix = "1995"
 
 [menu]
   # This displays buttons in the navbar to access your contents
