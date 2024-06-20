@@ -34,12 +34,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: true
+          submodules: true # Ensures submodules are checked out
           fetch-depth: 0
-      - name: Setup Hugo Modules
+      - name: Verify Theme Directory
         run: |
-          hugo mod get -u ./...
-          hugo mod tidy
+          if [ ! -d "themes/hugo.386" ]; then
+            echo "Theme directory not found. Attempting to download theme."
+            git clone https://gitlab.com/jmfergeau/hugo.386 themes/hugo.386
+          fi
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
