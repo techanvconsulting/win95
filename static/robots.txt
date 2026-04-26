@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://techanv.com/win95/sitemap.xml
+Sitemap: https://blog.techanv.com/sitemap.xml

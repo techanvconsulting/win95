@@ -1,4 +1,4 @@
-baseURL = "https://techanv.com/win95"
+baseURL = "https://blog.techanv.com/"
 title = "TechAnv Blog"
 languageCode = "en"
 DefaultContentLanguage = "en" # Change this to change the site's language
