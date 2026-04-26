@@ -1,5 +1,5 @@
 baseURL = "https://techanv.com/win95"
-title = "windows 95 blog theme"
+title = "TechAnv Blog"
 languageCode = "en"
 DefaultContentLanguage = "en" # Change this to change the site's language
 theme = "hugo.386"
@@ -7,19 +7,19 @@ preserveTaxonomyNames = true
 
 [params]
     # The name to display as main title in the home page
-    mainpagetitle = "Windows 95 Blog Theme"
+    mainpagetitle = "TechAnv"
 
     # The subtitle to display under the title in the home page
-    mainpagesubtitle = "Welcome to the early 90s!" 
+    mainpagesubtitle = "Open Source · AI-First · Security · Transparent"
 
     # The description of your website. It will be displayed in the home page
-    mainpagedesc = "A blog theme inspired by the Windows 95 operating system."
+    mainpagedesc = "We build technology that empowers businesses to move faster, safer, and smarter. From OpenArmor to intelligent AI platforms — transparency, integrity, and trust in every engagement."
 
     # The name to display in the copyright section in the footer
     copyrightname = "Anubhav Gain"
 
     # The url to use as link in the copyright name in the footer. Leave empty to use none.
-    copyrighturl = "http://mranv.github.io"
+    copyrighturl = "https://techanv.com"
 
     # Show the "built on Hugo" disclaimer
     showhugo = true
