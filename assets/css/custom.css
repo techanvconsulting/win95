@@ -16,6 +16,10 @@
    BASE — background image + blue overlay handled by fixed divs
    in baseof.html using Hugo relURL (reliable, no asset pipeline issues)
    ---------------------------------------------------------- */
+html {
+  background: #000c2e; /* fallback only — image from baseof.html fixed divs shows on top */
+}
+
 html,
 body {
   min-height: 100vh;
@@ -23,10 +27,10 @@ body {
   max-width: none !important;
   margin: 0 !important;
   padding: 0;
-  background: #000c2e; /* deep fallback colour while image loads */
 }
 
 body {
+  background: transparent !important; /* must be transparent so fixed bg divs show through */
   color: #e2e8f0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
