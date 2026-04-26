@@ -2,8 +2,9 @@
 title = "About"
 description = "Anubhav Gain is the founder of TechAnv — building open-source security, AI-first platforms, and transparent technology for businesses."
 date = "2026-04-27"
-aliases = ["about-us", "about", "contact"]
+aliases = ["about-us", "contact"]
 author = "Anubhav Gain"
+type = "page"
 +++
 
 ## Who I Am

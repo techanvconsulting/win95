@@ -1,0 +1,115 @@
+{{ define "main" }}
+<div style="max-width:900px; margin:0 auto; padding: 2rem 1rem;">
+
+  {{/* ── Profile card ── */}}
+  <div class="win95-panel" style="margin-bottom:1.5rem;">
+    <div class="win95-titlebar">▣ ABOUT.EXE — ANUBHAV GAIN / TECHANV</div>
+    <div style="padding:2rem; display:flex; flex-wrap:wrap; gap:2rem; align-items:flex-start;">
+
+      {{/* Avatar placeholder — vintage pixel aesthetic */}}
+      <div style="
+        width:120px; height:120px; flex-shrink:0;
+        border: 2px solid rgba(120,180,255,0.4);
+        border-top: 2px solid rgba(180,220,255,0.6);
+        border-left: 2px solid rgba(180,220,255,0.6);
+        border-right: 2px solid rgba(0,10,60,0.8);
+        border-bottom: 2px solid rgba(0,10,60,0.8);
+        background: linear-gradient(135deg, rgba(0,30,100,0.7) 0%, rgba(0,60,160,0.5) 100%);
+        display:flex; flex-direction:column; align-items:center; justify-content:center;
+        gap:6px;
+        font-family: monospace;
+      ">
+        <div style="font-size:2.5rem; line-height:1;">👤</div>
+        <div style="color:#93c5fd; font-size:0.6rem; letter-spacing:2px; text-transform:uppercase;">ANUBHAV</div>
+      </div>
+
+      {{/* Bio */}}
+      <div style="flex:1; min-width:200px;">
+        <h1 style="font-size:1.5rem; color:#fff; margin:0 0 0.25rem; text-shadow: 0 0 20px rgba(100,160,255,0.5);">Anubhav Gain</h1>
+        <div style="color:#60a5fa; font-size:0.85rem; font-family:monospace; margin-bottom:1rem; letter-spacing:0.5px;">
+          Security Engineer · Open Source Builder · Founder, TechAnv
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1.25rem;">
+          <span style="background:rgba(0,40,120,0.6); color:#93c5fd; padding:3px 10px; font-size:0.72rem; border:1px solid rgba(100,160,255,0.3); font-family:monospace;">OpenArmor</span>
+          <span style="background:rgba(0,40,120,0.6); color:#93c5fd; padding:3px 10px; font-size:0.72rem; border:1px solid rgba(100,160,255,0.3); font-family:monospace;">AI-First</span>
+          <span style="background:rgba(0,40,120,0.6); color:#93c5fd; padding:3px 10px; font-size:0.72rem; border:1px solid rgba(100,160,255,0.3); font-family:monospace;">Open Source</span>
+          <span style="background:rgba(0,40,120,0.6); color:#93c5fd; padding:3px 10px; font-size:0.72rem; border:1px solid rgba(100,160,255,0.3); font-family:monospace;">Security</span>
+          <span style="background:rgba(0,40,120,0.6); color:#93c5fd; padding:3px 10px; font-size:0.72rem; border:1px solid rgba(100,160,255,0.3); font-family:monospace;">Transparent</span>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+          <a href="https://techanv.com" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:5px; color:#93c5fd; font-size:0.8rem; text-decoration:none; font-family:monospace; border:1px solid rgba(100,160,255,0.3); padding:4px 12px; background:rgba(0,40,120,0.4);">
+            ⬡ techanv.com
+          </a>
+          <a href="https://github.com/mranv" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:5px; color:#93c5fd; font-size:0.8rem; text-decoration:none; font-family:monospace; border:1px solid rgba(100,160,255,0.3); padding:4px 12px; background:rgba(0,40,120,0.4);">
+            ⬡ github/mranv
+          </a>
+          <a href="https://in.linkedin.com/in/anubhavgain" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:5px; color:#93c5fd; font-size:0.8rem; text-decoration:none; font-family:monospace; border:1px solid rgba(100,160,255,0.3); padding:4px 12px; background:rgba(0,40,120,0.4);">
+            ⬡ linkedin
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── Main content from about.md ── */}}
+  <div class="win95-panel" style="margin-bottom:1.5rem;">
+    <div class="win95-titlebar">▣ README.MD</div>
+    <div style="padding:1.75rem; color:#e2e8f0; line-height:1.85; font-size:0.95rem;">
+      {{ .Content }}
+    </div>
+  </div>
+
+  {{/* ── TechAnv products ── */}}
+  <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(360px,1fr)); gap:1.25rem; margin-bottom:1.5rem;">
+
+    <div class="win95-panel">
+      <div class="win95-titlebar">▣ OPENARMOR.EXE</div>
+      <div style="padding:1.25rem;">
+        <div style="color:#93c5fd; font-size:0.95rem; font-weight:600; margin-bottom:0.5rem;">OpenArmor</div>
+        <div style="color:#cbd5e1; font-size:0.85rem; line-height:1.7; margin-bottom:1rem;">
+          Open-source security platform for endpoint and infrastructure protection.
+          No opacity, no vendor lock-in — the code is public, the logic is readable.
+        </div>
+        <a href="https://github.com/techanvconsulting" target="_blank" rel="noopener" style="color:#60a5fa; font-size:0.8rem; font-family:monospace; text-decoration:none;">→ VIEW ON GITHUB</a>
+      </div>
+    </div>
+
+    <div class="win95-panel">
+      <div class="win95-titlebar">▣ AI-PLATFORM.EXE</div>
+      <div style="padding:1.25rem;">
+        <div style="color:#93c5fd; font-size:0.95rem; font-weight:600; margin-bottom:0.5rem;">TechAnv AI Platform</div>
+        <div style="color:#cbd5e1; font-size:0.85rem; line-height:1.7; margin-bottom:1rem;">
+          Intelligent automation for security operations. Automated triage,
+          alert correlation, and threat intel enrichment — practical AI, not demos.
+        </div>
+        <a href="https://techanv.com" target="_blank" rel="noopener" style="color:#60a5fa; font-size:0.8rem; font-family:monospace; text-decoration:none;">→ LEARN MORE</a>
+      </div>
+    </div>
+
+  </div>
+
+  {{/* ── Core values ── */}}
+  <div class="win95-panel">
+    <div class="win95-titlebar">▣ VALUES.CFG</div>
+    <div style="padding:1.25rem; display:grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap:1rem;">
+      <div style="border-left:2px solid rgba(100,160,255,0.4); padding-left:0.75rem;">
+        <div style="color:#fff; font-size:0.8rem; font-weight:700; font-family:monospace; margin-bottom:0.25rem; text-transform:uppercase; letter-spacing:1px;">Open Source</div>
+        <div style="color:#94a3b8; font-size:0.75rem; line-height:1.5;">Software you can inspect is software you can trust.</div>
+      </div>
+      <div style="border-left:2px solid rgba(100,160,255,0.4); padding-left:0.75rem;">
+        <div style="color:#fff; font-size:0.8rem; font-weight:700; font-family:monospace; margin-bottom:0.25rem; text-transform:uppercase; letter-spacing:1px;">AI-First</div>
+        <div style="color:#94a3b8; font-size:0.75rem; line-height:1.5;">AI is a first-class design consideration, not a bolt-on feature.</div>
+      </div>
+      <div style="border-left:2px solid rgba(100,160,255,0.4); padding-left:0.75rem;">
+        <div style="color:#fff; font-size:0.8rem; font-weight:700; font-family:monospace; margin-bottom:0.25rem; text-transform:uppercase; letter-spacing:1px;">Security</div>
+        <div style="color:#94a3b8; font-size:0.75rem; line-height:1.5;">Built in from day one — not added as an afterthought.</div>
+      </div>
+      <div style="border-left:2px solid rgba(100,160,255,0.4); padding-left:0.75rem;">
+        <div style="color:#fff; font-size:0.8rem; font-weight:700; font-family:monospace; margin-bottom:0.25rem; text-transform:uppercase; letter-spacing:1px;">Transparent</div>
+        <div style="color:#94a3b8; font-size:0.75rem; line-height:1.5;">No hidden behavior. No surprises. No black boxes.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{{ end }}

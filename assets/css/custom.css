@@ -15,14 +15,14 @@
 /* ----------------------------------------------------------
    BACKGROUND — full-screen fixed hero image on html element
    ---------------------------------------------------------- */
+/* background-image injected via Hugo template in head.html with correct relURL */
 html {
-  min-height: 100%;
-  /* background-image injected via Hugo template in head.html with correct relURL */
+  height: 100%;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: #000c2e; /* fallback while image loads */
+  background-color: #000c2e;
 }
 
 html,
@@ -35,29 +35,29 @@ body {
 }
 
 body {
-  background: transparent; /* image lives on html, not body */
+  background: transparent;
   color: #e2e8f0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   position: relative;
 }
 
-/* Blue overlay — light enough that the image shows through clearly */
+/* Subtle blue overlay — image stays clearly visible */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background: linear-gradient(
-    135deg,
-    rgba(0, 8, 40, 0.58) 0%,
-    rgba(0, 30, 100, 0.45) 50%,
-    rgba(0, 50, 150, 0.38) 100%
+    160deg,
+    rgba(0, 5, 30, 0.52) 0%,
+    rgba(0, 20, 80, 0.40) 50%,
+    rgba(0, 10, 50, 0.48) 100%
   );
   z-index: 0;
   pointer-events: none;
 }
 
-/* All direct children of body must sit above the overlay */
+/* All direct children of body sit above the overlay */
 body > * {
   position: relative;
   z-index: 1;
