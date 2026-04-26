@@ -13,16 +13,17 @@
 }
 
 /* ----------------------------------------------------------
-   BACKGROUND — full-screen fixed hero image on html element
+   BACKGROUND — full-screen fixed hero image
+   Site is at root domain so /img/hero-bg.avif resolves correctly
    ---------------------------------------------------------- */
-/* background-image injected via Hugo template in head.html with correct relURL */
 html {
   height: 100%;
+  background-image: url('/img/hero-bg.avif');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: #000c2e;
+  background-color: #000c2e; /* fallback while image loads */
 }
 
 html,
@@ -42,16 +43,16 @@ body {
   position: relative;
 }
 
-/* Subtle blue overlay — image stays clearly visible */
+/* Blue overlay — keeps text readable, image still clearly visible */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background: linear-gradient(
     160deg,
-    rgba(0, 5, 30, 0.52) 0%,
-    rgba(0, 20, 80, 0.40) 50%,
-    rgba(0, 10, 50, 0.48) 100%
+    rgba(0, 5, 30, 0.50) 0%,
+    rgba(0, 20, 80, 0.38) 50%,
+    rgba(0, 10, 50, 0.45) 100%
   );
   z-index: 0;
   pointer-events: none;

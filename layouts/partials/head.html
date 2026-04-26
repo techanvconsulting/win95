@@ -155,13 +155,4 @@
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
 
-{{/* ─── 11. Hero background — on html element, relURL ensures correct path on subdirectory deploy ─── */}}
-<style>
-html {
-  background-image: url('{{ "img/hero-bg.avif" | relURL }}') !important;
-  background-size: cover !important;
-  background-position: center center !important;
-  background-attachment: fixed !important;
-  background-repeat: no-repeat !important;
-}
-</style>
+{{/* background-image is set directly in custom.css — /img/hero-bg.avif */}}
