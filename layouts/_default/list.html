@@ -1,5 +1,6 @@
 {{ define "main" }}
-<div style="max-width:900px; margin:0 auto; padding: 2rem 1rem;">
+{{ partial "breadcrumb.html" . }}
+<div style="max-width:900px; margin:0 auto; padding: 1rem 1rem 2rem;">
   <div class="win95-panel" style="margin-bottom:1.5rem;">
     <div class="win95-titlebar">▣ DIR: {{ .Title | upper }}</div>
     <div style="padding:1rem 1.5rem;">

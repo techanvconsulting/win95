@@ -7,44 +7,26 @@ author = "Anubhav Gain"
 type = "page"
 +++
 
-## Who I Am
+I'm a security engineer and open-source builder based in India. I founded TechAnv to solve a problem I kept running into: security software that works as a black box, costs a fortune, and still fails when you need it most.
 
-I'm Anubhav Gain — a security engineer, open-source advocate, and the person behind TechAnv.
+My background is in security engineering — endpoint protection, infrastructure security, threat detection, and building the tooling that makes security teams faster without burning them out. I've spent years working with open-source security stacks, contributing to detection rules, and figuring out where AI actually helps versus where it adds noise.
 
-My work sits at the intersection of security engineering, AI platforms, and open-source software. I spend most of my time building tools that make businesses more secure without making them slower — and figuring out how AI can do real, practical work rather than just look impressive in demos.
+I believe the best security tools are ones your team understands. That means readable code, documented logic, and no surprises in how they behave.
 
-I believe the best technology is technology you can read, understand, and trust. That means open source where possible, clear documentation always, and honest conversations about what a system can and cannot do.
+## What I'm Building
 
-## What TechAnv Is
+**OpenArmor** is the open-source security platform I'm most proud of. It gives organizations serious endpoint and infrastructure visibility without the opacity of legacy enterprise vendors. The detection logic is auditable. The rules are community-reviewed. You always know what it's doing and why.
 
-TechAnv is not a faceless software company. It's a focused effort to build technology that works the way it's supposed to — without surprises, without black boxes, and without locking you into something you don't understand.
+**TechAnv AI Platform** is the intelligent layer on top — automated triage, alert correlation, threat intel enrichment. Practical AI that removes repetitive overhead from security operations without replacing human judgment. It connects to your existing stack and works with real data.
 
-The mission is simple: transparent, trust-first technology. Every tool we ship should be something a technical person can audit, a business owner can reason about, and a developer can extend without needing to ask permission.
+Both are built on the same foundation: open standards, observable behavior, honest documentation.
 
-From open-source security with OpenArmor to intelligent AI platforms — we build technology that empowers businesses to move faster, safer, and smarter.
+## Writing
 
-## What We Build
+This blog is where I think in public. Posts cover what I'm actually working with — open-source security tooling, AI in security operations, DevSecOps practices, cloud-native detection, and the discipline of building software you can reason about.
 
-**OpenArmor** is TechAnv's open-source security platform. It's built for organizations that want serious endpoint and infrastructure security without the opacity of legacy enterprise vendors. The code is public. The logic is readable. You know what it's doing and why.
-
-**TechAnv AI Platform** is an intelligent automation layer for businesses. Not AI for the sake of AI — but practical, workflow-integrated automation that removes the repetitive overhead from security operations, infrastructure management, and engineering workflows. It connects to your existing stack and works with real data, not synthetic demos.
-
-Both projects share the same foundation: open standards, observable behavior, and a strong preference for doing less better rather than more poorly.
-
-## Core Values
-
-**Open Source** — Software you can inspect is software you can trust. We default to open where it matters most.
-
-**AI-First** — AI isn't a feature we bolt on. It's a first-class design consideration in everything we build.
-
-**Security** — Not as a checkbox, but as a property of the system. Security is built in, not added later.
-
-**Transparent** — No hidden behavior, no surprise lock-in, no fine print that changes how things actually work.
+No content marketing. No thought leadership theater. If I write about a tool, I've used it.
 
 ## Get in Touch
 
-If you're building something in the security or AI space, or you're just curious about the work — reach out. I'm straightforward about what I'm working on and what I'm not.
-
-- Website: [techanv.com](https://techanv.com)
-- GitHub: [github.com/mranv](https://github.com/mranv)
-- LinkedIn: [linkedin.com/in/anubhavgain](https://in.linkedin.com/in/anubhavgain)
+I'm always open to conversations about security engineering, open-source collaboration, or what TechAnv is building.
