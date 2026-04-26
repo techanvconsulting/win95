@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+
+  {{/* ── BACKGROUND LAYER 1: hero image, fixed, full viewport ── */}}
+  <div style="
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background-image: url('{{ "img/hero-bg.avif" | relURL }}');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  "></div>
+
+  {{/* ── BACKGROUND LAYER 2: blue shade on top of image ── */}}
+  <div style="
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      160deg,
+      rgba(0, 5, 35, 0.55) 0%,
+      rgba(0, 25, 90, 0.42) 50%,
+      rgba(0, 10, 55, 0.50) 100%
+    );
+    pointer-events: none;
+  "></div>
+
+  <header>
+    {{ partial "header.html" . }}
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+
+</body>
+</html>

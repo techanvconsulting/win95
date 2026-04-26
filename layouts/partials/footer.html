@@ -1,28 +1,11 @@
 <footer style="
   position: relative;
   margin-top: 4rem;
-  overflow: hidden;
+  border-top: 1px solid rgba(100,140,255,0.2);
+  background: linear-gradient(180deg, rgba(0,5,30,0.72) 0%, rgba(0,0,18,0.88) 100%);
 ">
-  {{/* Full-width footer image strip */}}
-  <div style="
-    position: absolute;
-    inset: 0;
-    background-image: url('{{ "img/hero-bg.avif" | relURL }}');
-    background-size: cover;
-    background-position: center bottom;
-    background-attachment: fixed;
-    z-index: 0;
-  "></div>
-  {{/* Dark overlay so text reads clearly */}}
-  <div style="
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,5,30,0.82) 0%, rgba(0,0,20,0.93) 100%);
-    z-index: 1;
-  "></div>
-
-  {{/* Content */}}
-  <div style="position:relative; z-index:2; padding: 2.5rem 1rem 1.5rem;">
+  {{/* Content — global baseof bg shows through, footer darkens just enough */}}
+  <div style="padding: 2.5rem 1rem 1.5rem;">
     <div style="max-width:900px; margin:0 auto;">
 
       {{/* Top row — brand + tagline */}}
