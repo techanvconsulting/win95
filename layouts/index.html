@@ -1,0 +1,126 @@
+{{ define "main" }}
+<div style="max-width:960px; margin:0 auto; padding:1.5rem 1rem 3rem;">
+
+  {{/* ── HERO PANEL ── */}}
+  <div style="
+    background: rgba(6,16,60,0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-top: 2px solid rgba(130,185,255,0.5);
+    border-left: 2px solid rgba(130,185,255,0.5);
+    border-right: 2px solid rgba(0,8,40,0.9);
+    border-bottom: 2px solid rgba(0,8,40,0.9);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.5), 0 8px 40px rgba(0,20,100,0.45);
+    margin-bottom: 1.75rem;
+  ">
+    <div style="
+      background: linear-gradient(90deg,#000080 0%,#1a6dc8 100%);
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 1px;
+      font-family: monospace;
+      text-transform: uppercase;
+    ">▣ TECHANV.EXE — OPEN SOURCE · AI · SECURITY</div>
+    <div style="padding:1.75rem;">
+      <h1 style="
+        color:#ffffff;
+        font-size:1.8rem;
+        margin:0 0 0.35rem;
+        font-weight:800;
+        letter-spacing:-0.5px;
+        text-shadow: 0 0 30px rgba(100,180,255,0.5);
+      ">{{ site.Params.mainpagetitle }}</h1>
+      <p style="color:#93c5fd; font-size:0.9rem; font-family:monospace; margin:0 0 1rem; letter-spacing:0.5px;">
+        {{ site.Params.mainpagesubtitle }}
+      </p>
+      <p style="color:#cbd5e1; font-size:0.9rem; line-height:1.75; margin:0 0 1.25rem; max-width:680px;">
+        {{ site.Params.mainpagedesc }}
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:0.6rem;">
+        <a href="/about/" style="
+          display:inline-block; padding:5px 16px;
+          background:rgba(0,60,180,0.55);
+          border-top:1px solid rgba(180,220,255,0.5);
+          border-left:1px solid rgba(180,220,255,0.5);
+          border-right:1px solid rgba(0,10,60,0.8);
+          border-bottom:1px solid rgba(0,10,60,0.8);
+          color:#e0eeff; font-family:monospace; font-size:0.8rem;
+          text-decoration:none; letter-spacing:0.5px;
+        ">▶ ABOUT</a>
+        <a href="/post/" style="
+          display:inline-block; padding:5px 16px;
+          background:rgba(0,40,120,0.45);
+          border-top:1px solid rgba(130,185,255,0.4);
+          border-left:1px solid rgba(130,185,255,0.4);
+          border-right:1px solid rgba(0,10,60,0.8);
+          border-bottom:1px solid rgba(0,10,60,0.8);
+          color:#93c5fd; font-family:monospace; font-size:0.8rem;
+          text-decoration:none; letter-spacing:0.5px;
+        ">▶ ALL POSTS</a>
+      </div>
+    </div>
+  </div>
+
+  {{/* ── POST GRID ── */}}
+  <div style="
+    font-size:0.72rem; font-family:monospace; color:#475569;
+    letter-spacing:1.5px; text-transform:uppercase;
+    margin-bottom:0.85rem; padding-left:2px;
+  ">▸ LATEST POSTS</div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:1.1rem;">
+    {{ range site.RegularPages.ByDate.Reverse }}
+    <article style="
+      background: rgba(6,16,60,0.74);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 2px solid rgba(120,180,255,0.42);
+      border-left: 2px solid rgba(120,180,255,0.42);
+      border-right: 2px solid rgba(0,8,40,0.9);
+      border-bottom: 2px solid rgba(0,8,40,0.9);
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.45), 0 6px 28px rgba(0,20,100,0.35);
+      display:flex; flex-direction:column;
+    ">
+      <div style="
+        background: linear-gradient(90deg,#000080 0%,#1a6dc8 100%);
+        padding:4px 10px;
+        font-size:0.68rem; font-weight:bold; color:#fff;
+        font-family:monospace; letter-spacing:1px; text-transform:uppercase;
+        flex-shrink:0;
+      ">▣ {{ .Section | upper | default "POST" }}.MD</div>
+      <div style="padding:1rem 1.1rem 1.1rem; flex:1; display:flex; flex-direction:column;">
+        <h2 style="font-size:0.97rem; font-weight:700; margin:0 0 0.35rem; line-height:1.4;">
+          <a href="{{ .RelPermalink }}" style="color:#b8d4ff; text-decoration:none;">{{ .Title }}</a>
+        </h2>
+        <time style="color:#3d5a80; font-size:0.7rem; font-family:monospace; display:block; margin-bottom:0.6rem;">
+          {{ .Date | time.Format "2006-01-02" }}
+        </time>
+        <p style="color:#94a3b8; font-size:0.83rem; line-height:1.6; flex:1; margin:0 0 0.85rem;">
+          {{ .Description | default (.Summary | plainify | truncate 120) }}
+        </p>
+        {{ with .Params.tags }}
+        <div style="display:flex; flex-wrap:wrap; gap:3px; margin-bottom:0.75rem;">
+          {{ range first 3 . }}
+          <span style="background:rgba(0,30,90,0.7); color:#60a5fa; padding:1px 7px; font-size:0.65rem; border:1px solid rgba(80,130,220,0.35); font-family:monospace; letter-spacing:0.5px;">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" style="
+          display:inline-block; padding:3px 12px; align-self:flex-start;
+          background:rgba(0,50,150,0.5);
+          border-top:1px solid rgba(130,185,255,0.4);
+          border-left:1px solid rgba(130,185,255,0.4);
+          border-right:1px solid rgba(0,10,60,0.9);
+          border-bottom:1px solid rgba(0,10,60,0.9);
+          color:#93c5fd; font-size:0.72rem; font-family:monospace;
+          text-decoration:none; letter-spacing:0.5px;
+        ">RUN →</a>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}
