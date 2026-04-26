@@ -154,3 +154,10 @@
 {{/* ─── 10. CSS and JS (preserve theme assets) ────────────────────────────── */}}
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
+
+{{/* ─── 11. Hero background — injected via template so relURL is correct ─── */}}
+<style>
+body {
+  background-image: url('{{ "img/hero-bg.avif" | relURL }}') !important;
+}
+</style>
