@@ -13,8 +13,18 @@
 }
 
 /* ----------------------------------------------------------
-   BACKGROUND — full-screen fixed hero image
+   BACKGROUND — full-screen fixed hero image on html element
    ---------------------------------------------------------- */
+html {
+  min-height: 100%;
+  /* background-image injected via Hugo template in head.html with correct relURL */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: #000c2e; /* fallback while image loads */
+}
+
 html,
 body {
   min-height: 100vh;
@@ -25,26 +35,23 @@ body {
 }
 
 body {
-  background-image: url('/img/hero-bg.avif');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: transparent; /* image lives on html, not body */
   color: #e2e8f0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   position: relative;
 }
 
-/* Deep blue overlay */
+/* Blue overlay — light enough that the image shows through clearly */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(0, 10, 60, 0.85) 0%,
-    rgba(0, 60, 200, 0.65) 100%
+    rgba(0, 8, 40, 0.58) 0%,
+    rgba(0, 30, 100, 0.45) 50%,
+    rgba(0, 50, 150, 0.38) 100%
   );
   z-index: 0;
   pointer-events: none;
