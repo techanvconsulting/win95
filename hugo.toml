@@ -4,6 +4,7 @@ languageCode = "en"
 DefaultContentLanguage = "en" # Change this to change the site's language
 theme = "hugo.386"
 preserveTaxonomyNames = true
+enableRobotsTXT = true
 
 [params]
     # The name to display as main title in the home page
@@ -28,6 +29,13 @@ preserveTaxonomyNames = true
     linkedin = "https://in.linkedin.com/in/anubhavgain"
     github = "https://github.com/mranv"
     gitlab = "https://gitlab.com/mranv"
+
+    # SEO / Open Graph params
+    og_image = "/img/techanv-og.png"
+    twitter_handle = "@techanv"
+    author = "Anubhav Gain"
+    keywords = "open-source security, AI platform, OpenArmor, DevSecOps, cloud security, threat intelligence, Anubhav Gain, TechAnv"
+    logo = "/img/logo.png"
 
     # Enables or disables the loading animations. false activates them. Default is false.
     loadfastload = false
@@ -93,3 +101,8 @@ tag = "tags"
 
   [services.twitter]
     disableInlineCSS = true
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5

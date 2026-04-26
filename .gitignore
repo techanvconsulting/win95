@@ -5,10 +5,10 @@
 # Hugo cache directory
 /resources/
 
-# Ignore generated files
-*.html
-*.css
-*.js
+# Ignore generated output only (not source templates or assets)
+/public/**/*.html
+/public/**/*.css
+/public/**/*.js
 
 # Ignore backup files
 *~

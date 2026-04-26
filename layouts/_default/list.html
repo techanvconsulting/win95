@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div style="max-width:900px; margin:0 auto; padding: 2rem 1rem;">
+  <div class="win95-panel" style="margin-bottom:1.5rem;">
+    <div class="win95-titlebar">▣ DIR: {{ .Title | upper }}</div>
+    <div style="padding:1rem 1.5rem;">
+      <h1 style="font-size:1.4rem; color:#fff; margin:0;">{{ .Title }}</h1>
+      {{ with .Content }}<div style="color:#cbd5e1; margin-top:0.5rem; font-size:0.9rem;">{{ . }}</div>{{ end }}
+    </div>
+  </div>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap:1.25rem;">
+    {{ range .Pages }}
+    <article class="win95-panel" style="display:flex; flex-direction:column;">
+      <div class="win95-titlebar">▣ {{ .Section | upper | default "POST" }}</div>
+      <div style="padding:1.25rem; flex:1; display:flex; flex-direction:column;">
+        <h2 style="font-size:1rem; margin:0 0 0.4rem;">
+          <a href="{{ .RelPermalink }}" style="color:#93c5fd; text-decoration:none;">{{ .Title }}</a>
+        </h2>
+        <time style="color:#475569; font-size:0.75rem; font-family:monospace; display:block; margin-bottom:0.5rem;">{{ .Date | time.Format "2006-01-02" }}</time>
+        <p style="color:#cbd5e1; font-size:0.85rem; line-height:1.6; flex:1; margin:0 0 0.75rem;">{{ .Description | default (.Summary | truncate 120) }}</p>
+        <a href="{{ .RelPermalink }}" style="color:#60a5fa; font-size:0.8rem; text-decoration:none; font-family:monospace;">RUN →</a>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techanv.com/win95/sitemap.xml

@@ -1,0 +1,41 @@
+{{ define "main" }}
+<div style="max-width:900px; margin:0 auto; padding: 2rem 1rem;">
+
+  {{/* Hero intro panel */}}
+  <div class="win95-panel" style="margin-bottom:2rem;">
+    <div class="win95-titlebar">▣ TECHANV.EXE — SECURITY &amp; AI BLOG</div>
+    <div style="padding:1.5rem;">
+      {{ .Content }}
+    </div>
+  </div>
+
+  {{/* Posts grid */}}
+  <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap:1.25rem;">
+    {{ range site.RegularPages }}
+    <article class="win95-panel" style="display:flex; flex-direction:column;">
+      <div class="win95-titlebar">▣ {{ .Section | upper | default "POST" }}.MD</div>
+      <div style="padding:1.25rem; flex:1; display:flex; flex-direction:column;">
+        <h2 style="font-size:1.05rem; margin:0 0 0.5rem; line-height:1.4;">
+          <a href="{{ .RelPermalink }}" style="color:#93c5fd; text-decoration:none;">{{ .Title }}</a>
+        </h2>
+        <time style="color:#475569; font-size:0.75rem; font-family:monospace; display:block; margin-bottom:0.75rem;">
+          {{ .Date | time.Format "2006-01-02" }}
+        </time>
+        <p style="color:#cbd5e1; font-size:0.88rem; line-height:1.6; flex:1; margin:0 0 1rem;">
+          {{ .Description | default (.Summary | truncate 140) }}
+        </p>
+        {{ with .Params.tags }}
+        <div style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:0.75rem;">
+          {{ range first 3 . }}
+          <span style="background:rgba(0,40,120,0.5); color:#93c5fd; padding:1px 6px; font-size:0.7rem; border:1px solid rgba(100,160,255,0.3); font-family:monospace;">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+        <a href="{{ .RelPermalink }}" style="display:inline-block; padding:4px 14px; background:rgba(0,60,160,0.5); border:1px solid rgba(100,160,255,0.4); color:#93c5fd; font-size:0.8rem; text-decoration:none; align-self:flex-start; font-family:monospace; letter-spacing:0.5px;">RUN →</a>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}

@@ -1,0 +1,156 @@
+{{- /*
+  Project-level head.html override — comprehensive dynamic SEO
+  Overrides themes/Hugo.386/layouts/partials/head.html
+*/ -}}
+
+{{/* ─── Computed variables ─────────────────────────────────────────────────── */}}
+
+{{- $siteName    := site.Title -}}
+{{- $siteURL     := "https://techanv.com" -}}
+{{- $defaultDesc := "We build technology that empowers businesses to move faster, safer, and smarter." -}}
+{{- $author      := (.Params.author | default site.Params.copyrightname | default "Anubhav Gain") -}}
+
+{{/* Description: page .Description > .Summary (plain, truncated) > site mainpagedesc > hardcoded fallback */}}
+{{- $desc := "" -}}
+{{- if .Description -}}
+  {{- $desc = .Description -}}
+{{- else if and .Summary (not .IsHome) -}}
+  {{- $desc = .Summary | plainify | truncate 160 -}}
+{{- else if site.Params.mainpagedesc -}}
+  {{- $desc = site.Params.mainpagedesc -}}
+{{- else -}}
+  {{- $desc = $defaultDesc -}}
+{{- end -}}
+
+{{/* OG / Twitter image */}}
+{{- $ogImage := "" -}}
+{{- if .Params.image -}}
+  {{- $ogImage = .Params.image | absURL -}}
+{{- else if site.Params.og_image -}}
+  {{- $ogImage = site.Params.og_image | absURL -}}
+{{- end -}}
+
+{{/* OG type */}}
+{{- $ogType := "website" -}}
+{{- if eq .Type "post" -}}
+  {{- $ogType = "article" -}}
+{{- end -}}
+
+{{/* ─── 1. Basic meta ───────────────────────────────────────────────────────── */}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ $author }}">
+
+{{/* ─── 2. Title ────────────────────────────────────────────────────────────── */}}
+{{- if .IsHome }}
+<title>{{ $siteName }}{{ with site.Params.mainpagesubtitle }} — {{ . }}{{ end }}</title>
+{{- else }}
+<title>{{ printf "%s | %s" .Title $siteName }}</title>
+{{- end }}
+
+{{/* ─── 3. Canonical ───────────────────────────────────────────────────────── */}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{/* ─── 9. Robots ──────────────────────────────────────────────────────────── */}}
+{{- if not .Params.noindex }}
+<meta name="robots" content="index, follow">
+{{- end }}
+
+{{/* ─── 8. Theme color (Win95 teal) ────────────────────────────────────────── */}}
+<meta name="theme-color" content="#008080">
+
+{{/* ─── 7. RSS feed discovery ──────────────────────────────────────────────── */}}
+{{ with .OutputFormats.Get "rss" -}}
+<link rel="alternate" type="application/rss+xml" title="{{ $siteName }}" href="{{ .RelPermalink }}">
+{{- end }}
+
+{{/* ─── 4. Open Graph ───────────────────────────────────────────────────────── */}}
+<meta property="og:title"       content="{{ if .IsHome }}{{ $siteName }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url"         content="{{ .Permalink }}">
+<meta property="og:type"        content="{{ $ogType }}">
+<meta property="og:site_name"   content="{{ $siteName }}">
+<meta property="og:locale"      content="{{ replace (site.Language.Lang | default "en") "-" "_" }}">
+{{- with $ogImage }}
+<meta property="og:image"       content="{{ . }}">
+{{- end }}
+{{- if eq $ogType "article" }}
+{{- with .Date }}
+<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}
+{{- with .Lastmod }}
+<meta property="article:modified_time"  content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}
+{{- range .Params.tags }}
+<meta property="article:tag" content="{{ . }}">
+{{- end }}
+{{- end }}
+
+{{/* ─── 5. Twitter Card ─────────────────────────────────────────────────────── */}}
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="{{ if .IsHome }}{{ $siteName }}{{ else }}{{ .Title }}{{ end }}">
+<meta name="twitter:description" content="{{ $desc }}">
+{{- with site.Params.twitter }}
+<meta name="twitter:site"        content="{{ . }}">
+{{- end }}
+{{- with $ogImage }}
+<meta name="twitter:image"       content="{{ . }}">
+{{- end }}
+
+{{/* ─── 6. JSON-LD structured data ─────────────────────────────────────────── */}}
+
+{{- if eq .Type "post" -}}
+{{/* 6a. Article schema for blog posts */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ $desc | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  {{- with .Date }}
+  "datePublished": "{{ .Format "2006-01-02T15:04:05Z07:00" }}",
+  {{- end }}
+  {{- with .Lastmod }}
+  "dateModified": "{{ .Format "2006-01-02T15:04:05Z07:00" }}",
+  {{- end }}
+  "author": {
+    "@type": "Person",
+    "name": {{ $author | jsonify }},
+    "url": "https://techanv.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TechAnv",
+    "url": "https://techanv.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://techanv.com/favicon.ico"
+    }
+  }
+  {{- with $ogImage }},
+  "image": {{ . | jsonify }}
+  {{- end }}
+}
+</script>
+{{- else if .IsHome -}}
+{{/* 6b. Organization schema for home page */}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TechAnv",
+  "url": "https://techanv.com",
+  "description": {{ $desc | jsonify }},
+  "sameAs": [
+    {{ with site.Params.linkedin }}{{ . | jsonify }},{{ end }}
+    "https://github.com/mranv"
+  ]
+}
+</script>
+{{- end }}
+
+{{/* ─── 10. CSS and JS (preserve theme assets) ────────────────────────────── */}}
+{{ partialCached "head/css.html" . }}
+{{ partialCached "head/js.html" . }}
