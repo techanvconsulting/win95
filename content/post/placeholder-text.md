@@ -1,60 +1,26 @@
 +++
 author = "Anubhav Gain"
-title = "Placeholder Text"
-date = "2019-03-09"
-description = "Lorem Ipsum Dolor Si Amet"
-tags = [
-    "markdown",
-    "text",
-]
+title = "Why I Built TechAnv: The Story Behind the Mission"
+date = "2026-01-15"
+description = "Every company starts with a problem that won't leave you alone. This is the story of why TechAnv exists."
+tags = ["techanv", "openarmor", "open-source", "story"]
+categories = ["company"]
 +++
 
-Lorem est tota propiore conpellat pectoribus de
-pectora summo. <!--more-->Redit teque digerit hominumque toris verebor lumina non cervice
-subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc
-caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis
-lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.
+I spent years working with security tools that I fundamentally did not trust. Not because they were bad at their jobs — some of them were excellent — but because I had no way to verify what they were actually doing. Alerts fired, logs disappeared into SaaS platforms I had no visibility into, and when something went wrong, the answer I got was always a variation of "trust us." That frustration is where TechAnv begins.
 
-1. Exierant elisi ambit vivere dedere
-2. Duce pollice
-3. Eris modo
-4. Spargitque ferrea quos palude
+<!--more-->
 
-Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus
-silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria
-tractus malis.
+Security is one of those domains where opacity is treated as a feature. Vendors talk about "proprietary detection logic" the way magicians talk about their tricks — if you could see how it worked, the magic would be gone. I understand the commercial logic. I just think it is wrong, especially when the thing being protected is someone's infrastructure, their users' data, their business.
 
-1. Comas hunc haec pietate fetum procerum dixit
-2. Post torum vates letum Tiresia
-3. Flumen querellas
-4. Arcanaque montibus omnes
-5. Quidem et
+The moment that crystallized everything for me was an incident response engagement where a tool flagged a critical alert, the customer escalated it to the vendor for clarification, and the vendor's response was a PDF. No source, no logic, no way to reproduce the detection. Just a document telling us to trust the verdict. That was the last time I accepted that answer.
 
-# Vagus elidunt
+I started building what would become OpenArmor as a direct response to that experience. The premise was simple: every detection rule, every correlation logic, every piece of the pipeline should be readable, auditable, and forkable by anyone who needs to use it. Open source was not a business decision — it was an ethical one. If you are going to tell someone their network is compromised, you owe them the ability to understand exactly why you believe that.
 
-<svg class="canon" xmlns="http://www.w3.org/2000/svg" overflow="visible" viewBox="0 0 496 373" height="373" width="496"><g fill="none"><path stroke="#000" stroke-width=".75" d="M.599 372.348L495.263 1.206M.312.633l494.95 370.853M.312 372.633L247.643.92M248.502.92l246.76 370.566M330.828 123.869V1.134M330.396 1.134L165.104 124.515"></path><path stroke="#ED1C24" stroke-width=".75" d="M275.73 41.616h166.224v249.05H275.73zM54.478 41.616h166.225v249.052H54.478z"></path><path stroke="#000" stroke-width=".75" d="M.479.375h495v372h-495zM247.979.875v372"></path><ellipse cx="498.729" cy="177.625" rx=".75" ry="1.25"></ellipse><ellipse cx="247.229" cy="377.375" rx=".75" ry="1.25"></ellipse></g></svg>
+OpenArmor grew from a personal tool into something other people wanted to use. That created a new problem: how do you build a sustainable organization around open-source security software without betraying the principles that made it worth building in the first place? That question is what turned OpenArmor into TechAnv.
 
-[The Van de Graaf Canon](https://en.wikipedia.org/wiki/Canons_of_page_construction#Van_de_Graaf_canon)
+TechAnv is the company I wished had existed when I was on the other side of that incident report. We build security tooling that you can read, question, extend, and challenge. We sell support, managed deployments, and the AI platform built on top of OpenArmor — but the core will always be open. The business model is built around being useful, not around being indispensable through obscurity.
 
-## Mane refeci capiebant unda mulcebat
+The name TechAnv comes from "anvil" — the thing you build on. Not the flashiest metaphor, but an honest one. We want to be the foundation that other people use to build good security outcomes, not the black box sitting in the middle of your stack that nobody can explain.
 
-Victa caducifer, malo vulnere contra
-dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere
-furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. **Faces illo pepulere** tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.
-
-Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli
-Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare
-Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert
-ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae
-vulnus haerentia iuste et exercebat, sui et.
-
-Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel **mitis temploque** vocatus, inque alis, _oculos nomen_ non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem
-Propoetides **parte**.
-
-{{< css.inline >}}
-
-<style>
-.canon { background: white; width: 100%; height: auto;}
-</style>
-
-{{< /css.inline >}}
+If you have ever stared at a security alert and wished you could just look at the code that generated it, that is who we built this for.
